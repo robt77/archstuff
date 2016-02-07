@@ -5,26 +5,28 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Building android
-alias buildclean='export PATH=~/bin:$PATH && cd ~/android/brokenm &&  ./build-broken.sh -c1 -p -s -z -j8 falcon'
-alias builddirty='export PATH=~/bin:$PATH && cd ~/android/brokenm &&  ./build-broken.sh -c2 -p -z -j8 falcon'
-alias buildlocal='export PATH=~/bin:$PATH && cd ~/android/brokenm &&  ./build-broken.sh -c1 -p -z -j8 falcon'
-alias changelog='cd ~/android/brokenm && . build/weeklychangelog.sh && cd ~/android/Changelogs && git pull'
+#Building android and GitFU
+alias buildclean='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c1 -p -s -z -j8 falcon'
+alias builddirty='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c2 -p -z -j8 falcon'
+alias buildlocal='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c1 -p -z -j8 falcon'
+alias changelog='cd ~/android/broken && . build/weeklychangelog.sh && cd ~/android/Changelogs && git pull'
 alias push='git push'
 alias reset='git reset --hard'
 alias pick='git cherry-pick'
+alias continue='git cherry-pick --continue'
 alias add='git add -A'
 alias commit='git commit'
+alias forget='git rerere forget'
 alias ..='cd ..'
-alias sync='cd ~/android/brokenm && repo sync -j8 --force-sync'
-alias cdfalcon='cd ~/android/brokenm/device/motorola/falcon'
-alias cdcommon='cd ~/android/brokenm/device/motorola/msm8226-common'
-alias cdkernel='cd ~/android/brokenm/kernel/motorola/msm8226'
-
+alias sync='cd ~/android/broken && repo sync -j8 --force-sync'
+alias cdfalcon='cd ~/android/broken/device/motorola/falcon'
+alias cdcommon='cd ~/android/broken/device/motorola/msm8226-common'
+alias cdkernel='cd ~/android/broken/kernel/motorola/msm8226'
+#alias buildkernel='cd ~/android/msm8226 && export CROSS_COMPILE=~/android/broken/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-  && 
+#export ARCH=arm && export SUBARCH=arm make clean && make mrproper && make falcon_defconfig && make -j8'
 #Arch Stuff
 
-alias ins='sudo pacman -S'
-alias update='sudo aura -Akua'
+alias ins='sudo pacman -S'1
 alias rem='sudo pacman -Rns'
 alias wifi='sudo wifi-menu'
 alias extract='tar -xvf'

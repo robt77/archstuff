@@ -36,6 +36,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start a chrome session
 bindsym $mod1+Return exec google-chrome-stable
 
+# start a file manager session
+bindsym $mod+Shift+Return exec thunar
+
+# start a file manager session
+bindsym $mod1+Shift+Return exec geany
 
 
 # kill focused window
@@ -133,6 +138,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 bindsym $mod1+v exec pavucontrol 
 
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -179,6 +186,16 @@ bindsym $mod+Pause mode "$mode_system"
 
 #Set Keyboard to GB
 exec setxkbmap gb
+exec --no-startup-id terminator
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id thunar
+exec --no-startup-id geany
+
+#assign classes to windows
+assign [class="Terminator"] 2
+assign [class="google-chrome"] 1
+assign [class="Thunar"] 3
+assign [class="Geany"] 3
 
 #exec ~/load_layout.sh
 
@@ -187,5 +204,9 @@ exec setxkbmap gb
 
 bar {
         status_command i3status
+            mode hide
+    hidden_state hide
+    modifier Mod1
+    position top 
 }
 
