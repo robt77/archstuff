@@ -22,8 +22,7 @@ alias sync='cd ~/android/broken && repo sync -j8 --force-sync'
 alias cdfalcon='cd ~/android/broken/device/motorola/falcon'
 alias cdcommon='cd ~/android/broken/device/motorola/msm8226-common'
 alias cdkernel='cd ~/android/broken/kernel/motorola/msm8226'
-#alias buildkernel='cd ~/android/msm8226 && export CROSS_COMPILE=~/android/broken/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-  && 
-#export ARCH=arm && export SUBARCH=arm make clean && make mrproper && make falcon_defconfig && make -j8'
+
 #Arch Stuff
 
 alias ins='sudo pacman -S'1
