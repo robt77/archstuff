@@ -6,9 +6,9 @@
 [[ $- != *i* ]] && return
 
 #Building android and GitFU
-alias buildclean='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c1 -p -s -z -j8 falcon'
-alias builddirty='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c2 -p -z -j8 falcon'
-alias buildlocal='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c1 -p -z -j8 falcon'
+alias buildofficial='export PATH=~/bin:$PATH && cd ~/android/broken &&  ./build-broken.sh -c10 -p -a -z -j8 falcon'
+alias builddirty='export PATH=~/bin:$PATH && cd ~/android/broken && ./build-broken.sh -c2 -p -a -z -j18 falcon'
+alias buildlocal='export PATH=~/bin:$PATH && cd ~/android/broken && ./build-broken.sh -c1 -p -a -z -j8 falcon'
 alias changelog='cd ~/android/broken && . build/weeklychangelog.sh && cd ~/android/Changelogs && git pull'
 alias push='git push'
 alias pull='git pull'
@@ -22,11 +22,11 @@ alias add='git add -A'
 alias commit='git commit'
 alias forget='git rerere forget'
 alias ..='cd ..'
-alias official='nano +304 ~/android/broken/vendor/broken/config/common.mk'
-alias sync='cd ~/android/broken && repo sync -j8 --force-sync'
+alias sync='cd ~/android/broken && repo sync -j10 --force-sync'
 alias cdfalcon='cd ~/android/broken/device/motorola/falcon'
 alias cdcommon='cd ~/android/broken/device/motorola/msm8226-common'
 alias cdkernel='cd ~/android/broken/kernel/motorola/msm8226'
+
 
 #Arch Stuff
 
@@ -52,4 +52,5 @@ alias analyze='systemd-analyze'
 PS1='[\u@\h \W]\$ '
 export USE_CCACHE=1
 export EDITOR="nano"
+export TERMINAL="termite"
 LANG=C
